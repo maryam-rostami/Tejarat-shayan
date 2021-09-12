@@ -8,7 +8,7 @@
         <th>Email</th>
         <th>Address</th>
       </tr>
-      <tr v-for="user in users" :key="user.id">
+      <tr v-for="user in userList" :key="user.id">
         <td>{{ user.name }}e</td>
         <td>{{ user.username }}</td>
         <td>{{ user.email }}</td>
@@ -19,28 +19,25 @@
 </template>
 
 <script>
-import apiSerivces from "../../Utils/apiService";
+// import { apiSerivces } from "utilsshayan";
 
 export default {
-  name: "UserList",
   data() {
-    return {
-      users: null,
-    };
+    return {};
   },
-  created: function () {
-    apiSerivces
-      .path("users")
-      .method("GET")
-      .request(
-        (res) => {
-          console.log("res", res);
-          this.users = res;
-        },
-        () => {
-          console.log("err");
-        }
-      );
+
+  computed: {
+    // Get From Store
+    userList() {
+      return this.$store.getters.userList;
+    },
+  },
+
+  created() {
+    // dispatch from store
+    this.$store.dispatch("fetchUserList");
+
+    console.log("apiSerivces from component", apiSerivces);
   },
 };
 </script>

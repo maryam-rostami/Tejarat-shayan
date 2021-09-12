@@ -1,17 +1,19 @@
 <template>
   <div class="content-mf1">
+    <loading />
     <user-management />
   </div>
 </template>
 
 <script>
+import Loading from "./components/shares/loading.vue";
 import UserManagement from "./pages/userManagement/index.vue";
 export default {
   name: "App",
   components: {
     UserManagement,
+    Loading,
   },
-  created: function () {},
 };
 </script>
 

@@ -5,7 +5,7 @@ const path = require("path");
 
 module.exports = {
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "http://localhost:3000/",
     // filename: "src/Utils/apiSerivces.js",
     // library: "apiSerivces",
   },
@@ -16,9 +16,8 @@ module.exports = {
   },
 
   devServer: {
-    // contentBase: path.join(__dirname, "/src"),
-    contentBase: path.join(__dirname, "public"),
-    port: 8080,
+    contentBase: path.join(__dirname, "/src"),
+    port: 3000,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -26,6 +25,7 @@ module.exports = {
         "X-Requested-With, content-type, Authorization",
     },
   },
+
   module: {
     rules: [
       {
@@ -69,14 +69,12 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "modulUserManagement",
+      name: "adminClient",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {
-        "./UsersList": "./src/components/userManagement/UsersList.vue",
-        "./userManagement": "./src/store/userManagement_Store.js",
-        "./Store": "./src/store/index.js",
+      remotes: {
+        whatever: "modulUserManagement@http://localhost:8080/remoteEntry.js",
       },
+      exposes: {},
       shared: require("./package.json").dependencies,
     }),
     new HtmlWebPackPlugin({

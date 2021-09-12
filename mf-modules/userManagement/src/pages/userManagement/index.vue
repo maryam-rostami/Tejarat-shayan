@@ -3,9 +3,8 @@
 </template>
 
 <script>
-import UsersList from "../../components/user/UsersList.vue";
+import UsersList from "../../components/userManagement/UsersList.vue";
 export default {
-  name: "UserManagement",
   components: {
     UsersList,
   },

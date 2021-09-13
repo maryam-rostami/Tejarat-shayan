@@ -8,6 +8,7 @@
     "start:live": "webpack-dev-server --open --mode development --liveReload"
   },
   "dependencies": {
+    "shayan-utils": "^1.0.0",
     "utilsshayan": "^1.0.3",
     "vue": "^3.0.0",
     "vue-style-loader": "^4.1.3",

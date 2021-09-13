@@ -1,13 +1,17 @@
 <template>
-  <div class="admin-client">Admin client</div>
-  <users-list />
+  <div class="admin-client">Admin client
+    <br><br>
+    <users-list />
+
+  </div>
+
 </template>
 
 <script>
 import UsersList from "whatever/UsersList";
 export default {
   name: "App",
-  components: { UsersList },
+ components: { UsersList },
 };
 </script>
 

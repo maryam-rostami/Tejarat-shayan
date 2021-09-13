@@ -36,8 +36,6 @@ export default {
   created() {
     // dispatch from store
     this.$store.dispatch("fetchUserList");
-
-    console.log("apiSerivces from component", apiSerivces);
   },
 };
 </script>

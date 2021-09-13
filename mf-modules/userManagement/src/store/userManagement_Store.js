@@ -1,4 +1,4 @@
-import { apiSerivces } from "utilsshayan";
+import { apiSerivces } from "shayan-utils";
 
 const userManagement = {
   state: {

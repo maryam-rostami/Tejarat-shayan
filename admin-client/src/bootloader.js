@@ -4,4 +4,5 @@ import "./assets/index.scss";
 import { store } from "whatever/Store";
 import { Quasar } from "quasar";
 import "quasar/dist/quasar.css";
+import "quasar/dist/icon-set/material-icons.umd.prod.js";
 createApp(App).use(store).use(Quasar, { config: {} }).mount("#app");

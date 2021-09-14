@@ -15,17 +15,19 @@
         <td>{{ user.address.city }}</td>
       </tr>
     </table>
+    <div class="q-pa-md q-gutter-sm">
+      <t-button color="primary" label="primary" />
+    </div>
   </div>
 </template>
 
 <script>
-
-
-
+import tButton from "shayan-ui-framework/src/components/buttons/Button.vue";
 export default {
   data() {
     return {};
   },
+  components: { tButton },
 
   computed: {
     // Get From Store

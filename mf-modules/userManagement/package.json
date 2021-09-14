@@ -8,6 +8,9 @@
     "start:live": "webpack-dev-server --open --mode development --liveReload"
   },
   "dependencies": {
+    "quasar": "^2.0.4",
+    "sass-loader": "^12.1.0",
+    "shayan-ui-framework": "^0.1.0",
     "shayan-utils": "^1.0.0",
     "vue": "^3.0.0",
     "vue-style-loader": "^4.1.3",

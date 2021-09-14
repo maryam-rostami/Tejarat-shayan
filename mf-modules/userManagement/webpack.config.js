@@ -6,8 +6,6 @@ const path = require("path");
 module.exports = {
   output: {
     publicPath: "http://localhost:8080/",
-    // filename: "src/Utils/apiSerivces.js",
-    // library: "apiSerivces",
   },
   entry: path.join(__dirname, "src/main.js"),
 
@@ -16,7 +14,6 @@ module.exports = {
   },
 
   devServer: {
-    // contentBase: path.join(__dirname, "/src"),
     contentBase: path.join(__dirname, "public"),
     port: 8080,
     headers: {
@@ -33,9 +30,6 @@ module.exports = {
         loader: "vue-loader",
         options: {
           loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
             scss: ["vue-style-loader", "css-loader", "sass-loader"],
             sass: [
               "vue-style-loader",
@@ -61,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader"],
+        use: ["vue-style-loader", "css-loader"],
       },
     ],
   },

@@ -4,14 +4,12 @@
 
 <script>
 import { ref } from "vue";
-import userManagementPage from "./pages/userManagement/index.vue";
+import UserManagementPage from "./pages/userManagement/index.vue";
 import { useQuasar } from "quasar";
 
 export default {
-  name: "LayoutDefault",
-
   components: {
-    userManagementPage,
+    UserManagementPage,
   },
 
   setup() {

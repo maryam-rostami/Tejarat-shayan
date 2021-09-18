@@ -96,6 +96,7 @@ module.exports = {
       remotes: {},
       exposes: {
         "./UsersList": "./src/components/userManagement/UsersList.vue",
+        "./UserForm": "./src/components/userManagement/UserForm.vue",
         "./userManagement": "./src/store/userManagement_Store.js",
         "./Store": "./src/store/index.js",
       },

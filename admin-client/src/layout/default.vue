@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> Title </q-toolbar-title>
+        <q-toolbar-title> Admin client </q-toolbar-title>
       </q-toolbar>
     </q-header>
 

@@ -1,11 +1,11 @@
 <template>
-  <home />
+  <user-management />
 </template>
 
 <script>
-import Home from "../src/pages/home/index.vue";
+import userManagement from "../src/pages/userManagement/index.vue";
 export default {
   name: "App",
-  components: { Home },
+  components: { userManagement },
 };
 </script>

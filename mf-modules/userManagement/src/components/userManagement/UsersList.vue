@@ -7,27 +7,29 @@
         <th>User Name</th>
         <th>Email</th>
         <th>Address</th>
+        <th>Action</th>
       </tr>
       <tr v-for="user in userList" :key="user.id">
         <td>{{ user.name }}e</td>
         <td>{{ user.username }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.address.city }}</td>
+        <td>
+          <q-btn class="q-mr-md" color="deep-orange" label="Delete" />
+          <q-btn color="amber" label="Edit" />
+        </td>
       </tr>
     </table>
-    <div class="q-pa-md q-gutter-sm">
-      <t-button color="primary" label="primary" />
-    </div>
+    <div class="q-pa-md q-gutter-sm"></div>
   </div>
 </template>
 
 <script>
-import tButton from "shayan-ui-framework/src/components/buttons/Button.vue";
 export default {
+  name: "UserList",
   data() {
     return {};
   },
-  components: { tButton },
 
   computed: {
     // Get From Store
@@ -55,6 +57,7 @@ th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  text-align: right;
 }
 
 tr:nth-child(even) {

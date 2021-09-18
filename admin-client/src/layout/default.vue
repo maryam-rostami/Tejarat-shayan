@@ -9,7 +9,6 @@
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <!-- drawer content -->
       <q-img
         src="https://cdn.quasar.dev/img/material.png"
         class="flex flex-center"
@@ -21,16 +20,40 @@
           <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
         </q-avatar>
       </q-img>
+
+      <!-- menu  -->
+      <q-list bordered class="rounded-borders">
+        <q-expansion-item expand-separator icon="mail" label="Level 1">
+          <q-expansion-item
+            :header-inset-level="1"
+            :content-inset-level="1"
+            expand-separator
+            icon="receipt"
+            label="Level 2"
+          >
+            <q-card>
+              <q-card-section> Level 3 </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-expansion-item
+            :header-inset-level="1"
+            :content-inset-level="1"
+            icon="schedule"
+            label="Postponed"
+          >
+            <q-card>
+              <q-card-section> Level 2 </q-card-section>
+            </q-card>
+          </q-expansion-item>
+        </q-expansion-item>
+      </q-list>
     </q-drawer>
 
     <q-page-container>
       <!-- <router-view /> -->
       <div class="content">
-        <q-card class="my-card">
-          <q-card-section>
-            <slot></slot>
-          </q-card-section>
-        </q-card>
+        <slot></slot>
       </div>
     </q-page-container>
   </q-layout>

@@ -1,12 +1,8 @@
 <template>
   <!-- <router-view /> -->
   <div class="content">
-    <q-card class="my-card">
-      <q-card-section>
-        <user-form />
-        <users-list />
-      </q-card-section>
-    </q-card>
+    <user-form />
+    <users-list />
   </div>
 </template>
 

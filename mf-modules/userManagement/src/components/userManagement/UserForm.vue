@@ -1,69 +1,73 @@
 <template>
-  <div class="user-form">
-    <h3>Users form</h3>
-    <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-      <div class="row justify-between">
-        <div class="col-md-3 q-pa-xs">
-          <q-input
-            filled
-            v-model="name"
-            label="name *"
-            lazy-rules
-            :rules="[
-              (val) => (val && val.length > 0) || 'Please type something',
-            ]"
-          />
-        </div>
-        <div class="col-md-3 q-pa-xs">
-          <q-input
-            filled
-            type="text"
-            v-model="userName"
-            label="user name *"
-            lazy-rules
-            :rules="[
-              (val) =>
-                (val !== null && val !== '') || 'Please type your user name',
-            ]"
-          />
-        </div>
-        <div class="col-md-3 q-pa-xs">
-          <q-input
-            filled
-            v-model="email"
-            label="email *"
-            lazy-rules
-            :rules="[
-              (val) => (val && val.length > 0) || 'Please type something',
-            ]"
-          />
-        </div>
-        <div class="col-md-3 q-pa-xs">
-          <q-input
-            filled
-            v-model="address"
-            label="address *"
-            lazy-rules
-            :rules="[
-              (val) => (val && val.length > 0) || 'Please type something',
-            ]"
-          />
-        </div>
-      </div>
+  <div class="user-form q-mb-md">
+    <q-card class="my-card" style="overflow: auto">
+      <q-card-section>
+        <h5>Create User</h5>
+        <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+          <div class="row justify-between">
+            <div class="col-md-3 q-pa-xs">
+              <q-input
+                filled
+                v-model="name"
+                label="name *"
+                lazy-rules
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]"
+              />
+            </div>
+            <div class="col-md-3 q-pa-xs">
+              <q-input
+                filled
+                type="text"
+                v-model="userName"
+                label="user name *"
+                lazy-rules
+                :rules="[
+                  (val) =>
+                    (val !== null && val !== '') ||
+                    'Please type your user name',
+                ]"
+              />
+            </div>
+            <div class="col-md-3 q-pa-xs">
+              <q-input
+                filled
+                v-model="email"
+                label="email *"
+                lazy-rules
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]"
+              />
+            </div>
+            <div class="col-md-3 q-pa-xs">
+              <q-input
+                filled
+                v-model="address"
+                label="address *"
+                lazy-rules
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]"
+              />
+            </div>
+          </div>
 
-      <!-- <div class="col-md-3"><q-toggle v-model="accept" label="I accept the license and terms" /></div> -->
+          <!-- <div class="col-md-3"><q-toggle v-model="accept" label="I accept the license and terms" /></div> -->
 
-      <div class="float-right">
-        <q-btn label="Submit" type="submit" color="primary" />
-        <q-btn
-          label="Reset"
-          type="reset"
-          color="success"
-          flat
-          class="q-ml-sm"
-        />
-      </div>
-    </q-form>
+          <div class="float-right q-mb-md">
+            <q-btn label="Submit" type="submit" color="secondary" />
+            <q-btn
+              label="Reset"
+              type="reset"
+              color="primary"
+              flat
+              class="q-ml-sm"
+            />
+          </div>
+        </q-form> </q-card-section
+    ></q-card>
   </div>
 </template>
 

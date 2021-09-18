@@ -1,8 +1,11 @@
 import { createApp } from "vue";
-import App from "./App.vue";
-import "./assets/index.scss";
 import { store } from "whatever/Store";
 import { Quasar } from "quasar";
-import "quasar/dist/quasar.css";
-import "quasar/dist/icon-set/material-icons.umd.prod.js";
-createApp(App).use(store).use(Quasar, { config: {} }).mount("#app");
+import quasarUserOptions from "./quasar-user-options";
+
+import App from "./App.vue";
+
+import "quasar/dist/quasar.rtl.css";
+import "@quasar/extras/material-icons/material-icons.css";
+
+createApp(App).use(store).use(Quasar, quasarUserOptions).mount("#app");

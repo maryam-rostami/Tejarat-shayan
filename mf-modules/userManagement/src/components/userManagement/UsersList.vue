@@ -42,7 +42,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style scoped>
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

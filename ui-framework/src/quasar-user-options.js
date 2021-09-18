@@ -5,13 +5,11 @@ import { Notify } from "quasar";
 
 // To be used on app.use(Quasar, { ... })
 export default {
+  config: {
+    notify: {},
+  },
   plugins: {
     Notify,
-  },
-  config: {
-    notify: {
-      /* look at QuasarConfOptions from the API card */
-    },
   },
   lang: lang,
 };

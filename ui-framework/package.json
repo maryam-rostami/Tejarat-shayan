@@ -24,7 +24,7 @@
     "postcss-rtl": "^1.2.3",
     "sass": "1.32.12",
     "sass-loader": "^10.1.0",
-    "vue-cli-plugin-quasar": "~4.0.2"
+    "vue-cli-plugin-quasar": "^4.0.0"
   },
   "eslintConfig": {
     "root": true,

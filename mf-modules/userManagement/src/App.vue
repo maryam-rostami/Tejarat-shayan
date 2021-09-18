@@ -1,34 +1,25 @@
 <template>
-  <div class="content-mf1">
-    <loading />
-    <user-management />
-  </div>
+  <user-management-page />
 </template>
 
 <script>
-import Loading from "./components/shares/loading.vue";
-import UserManagement from "./pages/userManagement/index.vue";
+import { ref } from "vue";
+import userManagementPage from "./pages/userManagement/index.vue";
+import { useQuasar } from "quasar";
+
 export default {
-  name: "App",
+  name: "LayoutDefault",
+
   components: {
-    UserManagement,
-    Loading,
+    userManagementPage,
+  },
+
+  setup() {
+    const $q = useQuasar();
+    console.log("lan", $q.lang.getLocale());
+    return {
+      leftDrawerOpen: ref(false),
+    };
   },
 };
 </script>
-
-<style lang="scss">
-body {
-  font-size: 14px;
-}
-th {
-  font-size: 14px;
-}
-p {
-  font-size: 14px;
-}
-.content-mf1 {
-  width: 100%;
-  display: flex;
-}
-</style>

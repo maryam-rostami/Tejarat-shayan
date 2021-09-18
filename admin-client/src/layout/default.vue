@@ -1,91 +1,69 @@
 <template>
-  <q-layout view="lHh lpR lff">
+  <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-toolbar-title> Admin Client </q-toolbar-title>
+        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <!-- <q-btn
-          dense
-          flat
-          round
-          icon="icon-asset material-icons ng-star-inserted"
-          @click="toggleRightDrawer"
-        /> -->
-        <span class="menu-toggle" @click="toggleRightDrawer">☰</span>
+        <q-toolbar-title> Title </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
       <!-- drawer content -->
-
-      <div
-        class="q-img q-img--menu absolute-top"
-        role="img"
-        style="height: 204px"
+      <q-img
+        src="https://cdn.quasar.dev/img/material.png"
+        class="flex flex-center"
       >
-        <div style="padding-bottom: 82.5195%"></div>
-        <div class="q-img__container absolute-full">
-          <img
-            class="
-              q-img__image q-img__image--with-transition q-img__image--loaded
-            "
-            loading="lazy"
-            aria-hidden="true"
-            draggable="false"
-            src="https://cdn.quasar.dev/img/material.png"
-            style="object-fit: cover; object-position: 50% 50%"
-          />
-        </div>
-        <div class="q-img__content absolute-full q-anchor--skip">
-          <div class="absolute-bottom bg-transparent">
-            <div class="q-avatar q-mb-sm" style="font-size: 56px">
-              <div class="q-avatar__content row flex-center overflow-hidden">
-                <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-              </div>
-            </div>
-            <div class="text-weight-bold">Razvan Stoenescu</div>
-            <div>@rstoenescu</div>
-          </div>
-        </div>
-      </div>
+        <q-avatar
+          class="absolute all-pointer-events"
+          style="bottom: 20px; left: 15px; padding: 0"
+        >
+          <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+        </q-avatar>
+      </q-img>
     </q-drawer>
 
     <q-page-container>
       <!-- <router-view /> -->
-      <slot></slot>
+      <div class="content">
+        <q-card class="my-card">
+          <q-card-section>
+            <slot></slot>
+          </q-card-section>
+        </q-card>
+      </div>
     </q-page-container>
-
-    <!-- <q-footer elevated class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <div>Title</div>
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer> -->
   </q-layout>
 </template>
 
 <script>
 import { ref } from "vue";
+import "../styles/quasar.scss";
 
 export default {
   name: "MainLayout",
+
   setup() {
-    const rightDrawerOpen = ref(false);
+    const leftDrawerOpen = ref(false);
+
     return {
-      rightDrawerOpen,
-      toggleRightDrawer() {
-        rightDrawerOpen.value = !rightDrawerOpen.value;
+      leftDrawerOpen,
+      toggleLeftDrawer() {
+        leftDrawerOpen.value = !leftDrawerOpen.value;
       },
     };
   },
 };
 </script>
 
-<style>
+<style lang="scss">
 .menu-toggle {
   font-size: 30px;
   cursor: pointer;
   padding-right: 20px;
+}
+.content {
+  background: #ededed;
+  padding: 25px;
 }
 </style>

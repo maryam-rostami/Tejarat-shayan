@@ -14,6 +14,7 @@
         class="flex flex-center"
       >
         <q-avatar
+          size="65px"
           class="absolute all-pointer-events"
           style="bottom: 20px; left: 15px; padding: 0"
         >
@@ -22,7 +23,7 @@
       </q-img>
 
       <!-- menu  -->
-      <q-list bordered class="rounded-borders">
+      <q-list class="rounded-borders">
         <q-expansion-item expand-separator icon="mail" label="Level 1">
           <q-expansion-item
             :header-inset-level="1"
@@ -40,10 +41,10 @@
             :header-inset-level="1"
             :content-inset-level="1"
             icon="schedule"
-            label="Postponed"
+            label="Level 2"
           >
             <q-card>
-              <q-card-section> Level 2 </q-card-section>
+              <q-card-section> Level 3 </q-card-section>
             </q-card>
           </q-expansion-item>
         </q-expansion-item>

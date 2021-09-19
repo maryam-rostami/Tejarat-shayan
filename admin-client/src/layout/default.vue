@@ -63,10 +63,8 @@
 
 <script>
 import { ref } from "vue";
-import avatarSvg from "../assets/images/avatar.svg?inline";
-import avatar from "../assets/images/avatar.png";
-
-import "../styles/quasar.scss";
+import avatarSvg from "../../public/images/avatar.svg?inline";
+import avatar from "../../public/images/avatar.png";
 
 export default {
   name: "MainLayout",

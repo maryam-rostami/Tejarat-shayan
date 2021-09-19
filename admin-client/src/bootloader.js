@@ -1,10 +1,10 @@
 import { createApp } from "vue";
-import { store } from "whatever/Store";
 import { Quasar } from "quasar";
+import { store } from "whatever/Store";
 import quasarUserOptions from "./quasar-user-options";
-
 import App from "./App.vue";
 
+import "./assets/sass/index.scss";
 import "quasar/dist/quasar.rtl.css";
 import "@quasar/extras/material-icons/material-icons.css";
 

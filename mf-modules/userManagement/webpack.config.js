@@ -55,23 +55,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          "css-loader",
-          {
-            loader: "sass-loader",
-            options: {
-              webpackImporter: false,
-              sassOptions: {
-                includePaths: ["node_modules"],
-              },
-              implementation: require("sass"),
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        loader: "svg-inline-loader",
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -81,6 +65,18 @@ module.exports = {
             options: {
               name: "[name].[contenthash].[ext]",
               outputPath: "fonts/",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "images/",
             },
           },
         ],

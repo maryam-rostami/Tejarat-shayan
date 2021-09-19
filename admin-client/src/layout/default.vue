@@ -18,7 +18,8 @@
           class="absolute all-pointer-events"
           style="bottom: 20px; left: 15px; padding: 0"
         >
-          <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+          <img :src="avatar" />
+          <!-- <img :src="avatarSvg" /> -->
         </q-avatar>
       </q-img>
 
@@ -62,10 +63,19 @@
 
 <script>
 import { ref } from "vue";
+import avatarSvg from "../assets/images/avatar.svg?inline";
+import avatar from "../assets/images/avatar.png";
+
 import "../styles/quasar.scss";
 
 export default {
   name: "MainLayout",
+  data() {
+    return {
+      avatarSvg,
+      avatar,
+    };
+  },
 
   setup() {
     const leftDrawerOpen = ref(false);

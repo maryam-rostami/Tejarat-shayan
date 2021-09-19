@@ -40,6 +40,7 @@ module.exports = {
               "sass-loader?indentedSyntax",
             ],
             css: ["vue-style-loader", "css-loader", "sass-loader"],
+            svg: ["svg-inline-loader"],
           },
           // other vue-loader options go here
         },
@@ -57,10 +58,6 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.svg$/,
-        loader: "svg-inline-loader",
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader"],
       },
@@ -71,7 +68,19 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[contenthash].[ext]",
-              outputPath: "fonts/",
+              outputPath: "assets/fonts/",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "assets/images",
             },
           },
         ],

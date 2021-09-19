@@ -2,14 +2,14 @@
   <div class="userList">
     <q-card class="my-card">
       <q-card-section>
-        <h5>Users list</h5>
+        <h5>لیست کاربران</h5>
         <table>
           <tr>
-            <th>Name</th>
-            <th>User Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Action</th>
+            <th>نام</th>
+            <th>نام کاربری</th>
+            <th>ایمیل</th>
+            <th>آدرس</th>
+            <th>عملیات</th>
           </tr>
           <tr v-for="user in userList" :key="user.id">
             <td>{{ user.name }}e</td>
@@ -17,8 +17,8 @@
             <td>{{ user.email }}</td>
             <td>{{ user.address.city }}</td>
             <td>
-              <q-btn class="q-mr-md" color="deep-orange" label="Delete" />
-              <q-btn color="amber" label="Edit" />
+              <q-btn class="q-mr-md" color="deep-orange" label="حذف" />
+              <q-btn color="amber" label="ویرایش" />
             </td>
           </tr>
         </table>

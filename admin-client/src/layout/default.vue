@@ -25,16 +25,16 @@
 
       <!-- menu  -->
       <q-list class="rounded-borders">
-        <q-expansion-item expand-separator icon="mail" label="Level 1">
+        <q-expansion-item expand-separator icon="mail" label="سطح 1">
           <q-expansion-item
             :header-inset-level="1"
             :content-inset-level="1"
             expand-separator
             icon="receipt"
-            label="Level 2"
+            label="سطح 2"
           >
             <q-card>
-              <q-card-section> Level 3 </q-card-section>
+              <q-card-section> سطح 3 </q-card-section>
             </q-card>
           </q-expansion-item>
 
@@ -42,10 +42,10 @@
             :header-inset-level="1"
             :content-inset-level="1"
             icon="schedule"
-            label="Level 2"
+            label="سطح 2"
           >
             <q-card>
-              <q-card-section> Level 3 </q-card-section>
+              <q-card-section> سطح 3 </q-card-section>
             </q-card>
           </q-expansion-item>
         </q-expansion-item>
@@ -63,8 +63,8 @@
 
 <script>
 import { ref } from "vue";
-import avatarSvg from "../../public/images/avatar.svg?inline";
-import avatar from "../../public/images/avatar.png";
+import avatarSvg from "../assets/images/avatar.svg?inline";
+import avatar from "../assets/images/avatar.png";
 
 export default {
   name: "MainLayout",

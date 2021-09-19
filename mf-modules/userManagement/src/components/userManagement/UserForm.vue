@@ -9,10 +9,10 @@
               <q-input
                 filled
                 v-model="name"
-                label="name *"
+                label="نام *"
                 lazy-rules
                 :rules="[
-                  (val) => (val && val.length > 0) || 'Please type something',
+                  (val) => (val && val.length > 0) || 'فیلد نام اجباری است',
                 ]"
               />
             </div>
@@ -21,12 +21,11 @@
                 filled
                 type="text"
                 v-model="userName"
-                label="user name *"
+                label="نام کاربری  *"
                 lazy-rules
                 :rules="[
                   (val) =>
-                    (val !== null && val !== '') ||
-                    'Please type your user name',
+                    (val && val.length > 0) || 'فیلد نام کاربری اجباری است',
                 ]"
               />
             </div>
@@ -34,32 +33,29 @@
               <q-input
                 filled
                 v-model="email"
-                label="email *"
+                label="ایمیل *"
                 lazy-rules
                 :rules="[
-                  (val) => (val && val.length > 0) || 'Please type something',
+                  (val) => (val && val.length > 0) || 'فیلد ایمیل اجباری است',
                 ]"
               />
             </div>
             <div class="col-md-3 q-pa-xs">
-              <q-input
-                filled
-                v-model="address"
-                label="address *"
-                lazy-rules
-                :rules="[
-                  (val) => (val && val.length > 0) || 'Please type something',
-                ]"
-              />
+              <q-input filled v-model="address" label="آدرس *" lazy-rules />
             </div>
           </div>
 
           <!-- <div class="col-md-3"><q-toggle v-model="accept" label="I accept the license and terms" /></div> -->
 
           <div class="float-right q-mb-md">
-            <q-btn label="Submit" type="submit" color="secondary" />
             <q-btn
-              label="Reset"
+              label="ایجاد کاربر"
+              type="submit"
+              color="secondary"
+              class="text-white"
+            />
+            <q-btn
+              label="پاک کردن"
               type="reset"
               color="primary"
               flat
@@ -91,23 +87,13 @@ export default {
       address,
 
       onSubmit() {
-        if (accept.value !== true) {
-          $q.notify({
-            color: "red-5",
-            textColor: "white",
-            icon: "warning",
-            message: "You need to accept the license and terms first",
-          });
-        } else {
-          $q.notify({
-            color: "green-4",
-            textColor: "white",
-            icon: "cloud_done",
-            message: "Submitted",
-          });
-        }
+        $q.notify({
+          color: "green-4",
+          textColor: "white",
+          icon: "cloud_done",
+          message: "کاربر جدید با موفقیت ثبت شد",
+        });
       },
-
       onReset() {
         name.value = null;
         userName.value = null;

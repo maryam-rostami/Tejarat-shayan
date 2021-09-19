@@ -23,7 +23,9 @@ tr,
 th,
 td,
 a,
-caption {
-  font-family: "BRoya";
+caption,
+div,
+input {
+  font-family: "Vazir";
 }
 </style>

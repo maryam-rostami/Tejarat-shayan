@@ -1,6 +1,5 @@
 import apiSerivces from "./js/apiService";
-import test from "./js/test";
-export { test, apiSerivces };
+export { apiSerivces };
 
 // const utils = {
 //   apiSerivces,

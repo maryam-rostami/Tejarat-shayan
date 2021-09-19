@@ -17,7 +17,12 @@
             <td>{{ user.email }}</td>
             <td>{{ user.address.city }}</td>
             <td>
-              <q-btn class="q-mr-md" color="deep-orange" label="حذف" />
+              <q-btn
+                class="q-mr-md"
+                color="red"
+                label="حذف"
+                @click="confirm = true"
+              />
               <q-btn color="amber" label="ویرایش" />
             </td>
           </tr>
@@ -25,16 +30,33 @@
         <div class="q-pa-md q-gutter-sm"></div>
       </q-card-section>
     </q-card>
+
+    <!-- confirm message  -->
+    <q-dialog v-model="confirm" persistent>
+      <q-card>
+        <q-card-section class="row items-center">
+          <q-avatar icon="delete" color="red" text-color="white" />
+          <span class="q-ml-sm">آیا کاربر مورد نظر حذف شود ؟</span>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="حذف" color="red" v-close-popup />
+          <q-btn flat label="بستن" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "UserList",
-  data() {
-    return {};
+  setup() {
+    return {
+      confirm: ref(false),
+    };
   },
-
   computed: {
     // Get From Store
     userList() {

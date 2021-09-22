@@ -54,7 +54,7 @@
 
     <q-page-container>
       <!-- <router-view /> -->
-      <div class="content">
+      <div class="bg-grey-3 q-pa-md">
         <slot></slot>
       </div>
     </q-page-container>
@@ -93,9 +93,5 @@ export default {
   font-size: 30px;
   cursor: pointer;
   padding-right: 20px;
-}
-.content {
-  background: #ededed;
-  padding: 25px;
 }
 </style>

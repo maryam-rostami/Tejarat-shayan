@@ -49,7 +49,7 @@
 
           <div class="float-right q-mb-md">
             <q-btn
-              label="ایجاد کاربر"
+              label="ثبت"
               type="submit"
               color="secondary"
               class="text-white"

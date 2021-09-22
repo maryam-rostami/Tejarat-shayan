@@ -16,7 +16,7 @@
       />
     </q-tabs>
 
-    <q-tab-panels class="bg-grey-4" v-model="tab">
+    <q-tab-panels class="bg-transparent" v-model="tab">
       <q-tab-panel
         class="q-pa-none"
         v-for="tab in tabs"

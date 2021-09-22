@@ -16,15 +16,14 @@
       />
     </q-tabs>
 
-    <q-tab-panels class="bg-transparent" v-model="tab">
+    <q-tab-panels class="bg-transparent" keep-alive v-model="tab">
       <q-tab-panel
         class="q-pa-none"
         v-for="tab in tabs"
         :name="tab.name"
         :key="tab.name"
       >
-        <user-form :title="tab.label" />
-        <users-list :title="tab.label" />
+        <component v-bind:is="tab.name"></component>
       </q-tab-panel>
     </q-tab-panels>
   </div>
@@ -32,15 +31,13 @@
 
 <script>
 import { ref } from "vue";
-import UsersList from "./UsersList.vue";
-import UserForm from "./UserForm.vue";
+import User from "./User.vue";
+import Role from "./Role.vue";
+import Access from "./Access.vue";
 
 export default {
   name: "UserManagementComponent",
-  components: {
-    UsersList,
-    UserForm,
-  },
+  components: { User, Access, Role },
   data() {
     return {
       tabs: [

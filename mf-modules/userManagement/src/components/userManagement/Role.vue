@@ -1,12 +1,11 @@
 <template>
-  <h3>Role</h3>
+  <div class="role-tab">Role</div>
 </template>
 
 <script>
 export default {
-    name="role"
-
-}
+  name: "role",
+};
 </script>
 
 <style></style>

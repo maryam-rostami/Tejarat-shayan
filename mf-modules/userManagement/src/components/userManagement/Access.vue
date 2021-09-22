@@ -1,12 +1,11 @@
 <template>
-  <h3>Access</h3>
+  <div class="access-tab">Access</div>
 </template>
 
 <script>
 export default {
-    name="Access"
-
-}
+  name: "access",
+};
 </script>
 
 <style></style>

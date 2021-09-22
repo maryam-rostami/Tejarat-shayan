@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { Quasar } from "quasar";
-import { store } from "whatever/Store";
+import { store } from "whatever/store";
 import quasarUserOptions from "./quasar-user-options";
 import App from "./App.vue";
 

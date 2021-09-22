@@ -2,7 +2,7 @@
   <div class="user-form q-mb-md">
     <q-card class="my-card" style="overflow: auto">
       <q-card-section>
-        <h5>ایجاد کاربر</h5>
+        <h5>{{ title }}</h5>
         <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
           <div class="row justify-between">
             <div class="col-md-3 q-pa-xs">
@@ -72,6 +72,7 @@ import { useQuasar } from "quasar";
 import { ref } from "vue";
 export default {
   name: "UserForm",
+  props: ["title"],
   setup() {
     const $q = useQuasar();
 

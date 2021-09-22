@@ -2,7 +2,7 @@
   <div class="userList">
     <q-card class="my-card">
       <q-card-section>
-        <h5>لیست کاربران</h5>
+        <h5>{{ title }}</h5>
         <table>
           <tr>
             <th>نام</th>
@@ -52,6 +52,7 @@
 import { ref } from "vue";
 export default {
   name: "UserList",
+  props: ["title"],
   setup() {
     return {
       confirm: ref(false),

@@ -91,10 +91,10 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./UsersList": "./src/components/userManagement/UsersList.vue",
-        "./UserForm": "./src/components/userManagement/UserForm.vue",
-        "./userManagement": "./src/store/userManagement_Store.js",
-        "./Store": "./src/store/index.js",
+        "./userManagementComponent":
+          "./src/components/userManagement/index.vue",
+        "./userManagementStore": "./src/store/userManagement_Store.js",
+        "./store": "./src/store/index.js",
       },
       shared: require("./package.json").dependencies,
     }),

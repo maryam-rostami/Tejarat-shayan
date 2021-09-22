@@ -32,7 +32,7 @@ export default {
           id: "2",
           lastName: "پشمک رستمی",
           userName: "p.rostami",
-          email: "maryamrostmai598@gmail.com",
+          email: "pashmak@gmail.com",
         },
       ],
     };

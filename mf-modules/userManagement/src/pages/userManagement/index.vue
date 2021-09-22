@@ -1,27 +1,15 @@
 <template>
   <!-- <router-view /> -->
-  <div class="content">
-    <user-form />
-    <users-list />
-  </div>
+  <user-management-component />
 </template>
 
 <script>
-import UsersList from "../../components/userManagement/UsersList.vue";
-import UserForm from "../../components/userManagement/UserForm.vue";
+import UserManagementComponent from "../../components/userManagement/index.vue";
 
 export default {
   name: "UserManagementPage",
-  components: {
-    UsersList,
-    UserForm,
-  },
+  components: { UserManagementComponent },
   created: function () {},
 };
 </script>
-<style scoped>
-.content {
-  padding: 30px;
-  background: #ededed;
-}
-</style>
+<style scoped></style>

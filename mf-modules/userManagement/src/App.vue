@@ -1,5 +1,5 @@
 <template>
-  <user-management-page />
+  <div class="q-pa-xl bg-grey-4"><user-management-page /></div>
 </template>
 
 <script>

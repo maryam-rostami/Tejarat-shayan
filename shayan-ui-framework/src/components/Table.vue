@@ -1,11 +1,11 @@
 <template>
   <div class="q-pa-md">
     <q-table
+      :props="props"
       :title="title"
       :rows="rows"
       :columns="columns"
       :separator="separator"
-      :visible-columns="visibleColumns"
       row-key="id"
       @row-click="selectRow"
     >
@@ -34,11 +34,11 @@
   </div>
 </template>
 <script>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 
 export default {
   name: "t-table",
-  props: ["columns", "rows", "visibleColumns", "title", "row-key"],
+  props: ["columns", "rows", "title", "row-key"],
   data() {
     return {};
   },

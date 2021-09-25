@@ -2,7 +2,6 @@
   <t-table
     :columns.sync="columns"
     :rows.sync="rows"
-    :visibleColumns="visibleColumns"
     title="لیست کاربران"
     @edit-click="editRow"
     @delete-click="deleteRow"
@@ -17,13 +16,16 @@ export default {
   components: { tTable },
   data() {
     return {
-      visibleColumns: ["id"],
       columns: [
-        { name: "id", label: "id" },
+        {
+          name: "id",
+          classes: "hidden",
+          headerClasses: "hidden",
+        },
         { name: "lastName", label: "نام" },
         { name: "userName", label: "نام کاربری" },
         { name: "email", label: "ایمیل" },
-        { name: "actions", align: "center", label: "عملیات", field: "actions" },
+        { name: "actions", align: "center", label: "عملیات" },
       ],
       rows: [
         {

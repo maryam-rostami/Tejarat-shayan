@@ -37,7 +37,7 @@
 import { ref } from "vue";
 
 export default {
-  name: "t-table",
+  name: "TTable",
   props: ["columns", "rows", "title", "row-key"],
   data() {
     return {};

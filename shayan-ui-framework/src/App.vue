@@ -3,6 +3,8 @@
     :columns.sync="columns"
     :rows.sync="rows"
     :visibleColumns="visibleColumns"
+    title="id"
+    @row-click="rowClick"
   />
 </template>
 
@@ -39,6 +41,11 @@ export default {
   },
   created() {
     console.log("created called.");
+  },
+  methods: {
+    rowClick: (evt, row, index) => {
+      console.log("selected row ::::", evt, row, index);
+    },
   },
 };
 </script>

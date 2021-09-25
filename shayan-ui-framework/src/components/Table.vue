@@ -1,47 +1,22 @@
 <template>
   <div class="q-pa-md">
     <q-table
-      title="لیست کاربران"
+      :title="title"
       :rows="rows"
       :columns="columns"
       :separator="separator"
       :visible-columns="visibleColumns"
-      row-key="name"
+      row-key="id"
       @row-click="selectRow"
     />
   </div>
 </template>
 <script>
 import { ref } from "vue";
-// const columns =
-// [
-//   {
-//     name: "name",
-//     required: true,
-//     label: "Dessert (100g serving)",
-//     align: "left",
-//     field: (row) => row.name,
-//     format: (val) => `${val}`,
-//     sortable: true,
-//   },
-// ];
-
-// const rows = [
-//   {
-//     name: "Frozen Yogurt",
-//     calories: 159,
-//     fat: 6.0,
-//     carbs: 24,
-//     protein: 4.0,
-//     sodium: 87,
-//     calcium: "14%",
-//     iron: "1%",
-//   }
-// ];
 
 export default {
   name: "t-table",
-  props: ["columns", "rows", "visibleColumns"],
+  props: ["columns", "rows", "visibleColumns", "title", "row-key"],
   data() {
     return {};
   },
@@ -63,7 +38,7 @@ export default {
   },
   methods: {
     selectRow(evt, row, index) {
-      console.log(row.id);
+      this.$emit("row-click", evt, row, index);
     },
   },
   computed: {},

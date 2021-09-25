@@ -5,7 +5,7 @@ const path = require("path");
 
 module.exports = {
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath: "http://localhost:8080/",
     // filename: "src/Utils/apiSerivces.js",
     // library: "apiSerivces",
   },
@@ -17,7 +17,7 @@ module.exports = {
 
   devServer: {
     contentBase: path.join(__dirname, "/src"),
-    port: 3000,
+    port: 8080,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -94,7 +94,7 @@ module.exports = {
       name: "adminClient",
       filename: "remoteEntry.js",
       remotes: {
-        whatever: "modulUserManagement@http://localhost:8080/remoteEntry.js",
+        whatever: "modulUserManagement@http://localhost:8001/remoteEntry.js",
       },
       exposes: {},
       shared: require("./package.json").dependencies,

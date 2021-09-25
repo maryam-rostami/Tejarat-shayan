@@ -5,7 +5,7 @@ const path = require("path");
 
 module.exports = {
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "http://localhost:8001/",
   },
   entry: path.join(__dirname, "src/main.js"),
 
@@ -15,7 +15,7 @@ module.exports = {
 
   devServer: {
     contentBase: path.join(__dirname, "public"),
-    port: 8080,
+    port: 8001,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",

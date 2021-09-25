@@ -8,11 +8,33 @@
       :visible-columns="visibleColumns"
       row-key="id"
       @row-click="selectRow"
-    />
+    >
+      <!-- actions cell  -->
+      <template v-slot:body-cell-actions="props">
+        <q-td :props="props">
+          <q-btn
+            dense
+            round
+            flat
+            color="primary"
+            @click="editRow(props)"
+            icon="edit"
+          ></q-btn>
+          <q-btn
+            dense
+            round
+            flat
+            color="red"
+            @click="deleteRow(props)"
+            icon="delete"
+          ></q-btn>
+        </q-td>
+      </template>
+    </q-table>
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 export default {
   name: "t-table",
@@ -21,8 +43,9 @@ export default {
     return {};
   },
   setup() {
+    const separator = ref("cell");
     return {
-      separator: ref("cell"),
+      separator,
     };
   },
   created() {
@@ -40,8 +63,13 @@ export default {
     selectRow(evt, row, index) {
       this.$emit("row-click", evt, row, index);
     },
+    editRow(props) {
+      this.$emit("edit-click", props);
+    },
+    deleteRow(props) {
+      this.$emit("delete-click", props);
+    },
   },
-  computed: {},
 };
 </script>
 

@@ -12,6 +12,7 @@
     "file-loader": "^6.2.0",
     "quasar": "^2.0.4",
     "sass-loader": "^12.1.0",
+    "shayan-ui-framework": "^0.1.1",
     "shayan-utils": "^1.0.0",
     "vue": "^3.0.0",
     "vue-cli-plugin-quasar": "^4.0.0",

@@ -67,6 +67,16 @@
       ></q-card>
     </div>
 
+    <!-- table quasar  -->
+    <t-table
+      :columns.sync="columns"
+      :rows.sync="rows"
+      :visibleColumns="visibleColumns"
+      title="لیست کاربران"
+      @row-click="rowClick"
+    />
+    <!-- -------- -->
+
     <div class="userList">
       <q-card class="my-card">
         <q-card-section>
@@ -95,6 +105,7 @@
               </td>
             </tr>
           </table>
+
           <div class="q-pa-md q-gutter-sm"></div>
         </q-card-section>
       </q-card>
@@ -118,24 +129,56 @@
 </template>
 
 <script>
+import tTable from "shayan-ui-framework/src/components/Table.vue";
 import { ref } from "vue";
 export default {
   name: "user",
+  components: { tTable },
+  data() {
+    return {
+      visibleColumns: ["id"],
+      columns: [
+        { name: "id", label: "id" },
+        { name: "lastName", label: "نام" },
+        { name: "userName", label: "نام کاربری" },
+        { name: "email", label: "ایمیل" },
+      ],
+      rows: [
+        {
+          id: "1",
+          lastName: "مریم رستمی",
+          userName: "m.rostami",
+          email: "maryamrostmai598@gmail.com",
+        },
+        {
+          id: "2",
+          lastName: "پشمک رستمی",
+          userName: "p.rostami",
+          email: "pashmak@gmail.com",
+        },
+      ],
+    };
+  },
   setup() {
     return {
       confirm: ref(false),
     };
   },
+  created() {
+    this.$store.dispatch("fetchUserList");
+    console.log("created called.");
+  },
+  methods: {
+    rowClick: (evt, row, index) => {
+      console.log("selected row ::::", evt, row, index);
+    },
+  },
+
   computed: {
     // Get From Store
     userList() {
       return this.$store.getters.userList;
     },
-  },
-
-  created() {
-    // dispatch from store
-    this.$store.dispatch("fetchUserList");
   },
 };
 </script>

@@ -3,8 +3,9 @@
     :columns.sync="columns"
     :rows.sync="rows"
     :visibleColumns="visibleColumns"
-    title="id"
-    @row-click="rowClick"
+    title="لیست کاربران"
+    @edit-click="editRow"
+    @delete-click="deleteRow"
   />
 </template>
 
@@ -22,6 +23,7 @@ export default {
         { name: "lastName", label: "نام" },
         { name: "userName", label: "نام کاربری" },
         { name: "email", label: "ایمیل" },
+        { name: "actions", align: "center", label: "عملیات", field: "actions" },
       ],
       rows: [
         {
@@ -43,8 +45,14 @@ export default {
     console.log("created called.");
   },
   methods: {
-    rowClick: (evt, row, index) => {
-      console.log("selected row ::::", evt, row, index);
+    selectedRow: (evt, row, index) => {
+      console.log("selected row ::::", evt, row.id, index);
+    },
+    editRow(props) {
+      console.log("Edit row ::::", props.row.id);
+    },
+    deleteRow(props) {
+      console.log("Delete row ::::", props.row.id);
     },
   },
 };

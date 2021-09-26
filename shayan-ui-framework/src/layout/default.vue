@@ -25,7 +25,7 @@
       <!-- ====menu==== -->
       <div style="max-width: 350px">
         <q-list separator>
-          <q-item to="/table" clickable v-ripple>
+          <q-item to="/table" clickable exact v-ripple>
             <q-item-section>
               Table
             </q-item-section>
@@ -37,7 +37,7 @@
 
     <q-page-container>
       <div class="bg-grey-3 q-pa-md">
-        <router-view />
+        <router-view></router-view>
       </div>
     </q-page-container>
   </q-layout>

@@ -3,8 +3,11 @@
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title> shayan UI framework </q-toolbar-title>
+        <q-item to="/" clickable exact v-ripple>
+          <q-toolbar-title>
+            shayan UI framework
+          </q-toolbar-title>
+        </q-item>
       </q-toolbar>
     </q-header>
 

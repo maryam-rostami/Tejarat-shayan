@@ -1,5 +1,5 @@
 <template>
-  <main-layout />
+  <MainLayout />
 </template>
 
 <script>
@@ -7,9 +7,6 @@ import MainLayout from "./layout/default.vue";
 export default {
   name: "App",
   components: { MainLayout },
-  data() {
-    return {};
-  },
 };
 </script>
 

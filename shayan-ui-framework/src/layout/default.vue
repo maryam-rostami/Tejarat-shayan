@@ -25,9 +25,9 @@
       <!-- ====menu==== -->
       <div style="max-width: 350px">
         <q-list separator>
-          <q-item clickable v-ripple>
+          <q-item to="/table" clickable v-ripple>
             <q-item-section>
-              <q-side-link item to="/table" exact> Table</q-side-link>
+              Table
             </q-item-section>
           </q-item>
         </q-list>

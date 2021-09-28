@@ -1,15 +1,24 @@
-import TablePage from "./pages/Table.vue";
+import Table from "./pages/Table.vue";
+import Modal from "./pages/Modal.vue";
+
 import Dashboard from "./pages/Dashboard.vue";
+import LoginPage from "./pages/Login.vue";
+
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/dashboard",
+    path: "/",
     component: Dashboard,
     children: [
-      { path: "/table", component: TablePage },
+      { path: "/table", component: Table },
+      { path: "/modal", component: Modal },
       // { path: '*', component: Error404 }
     ],
+  },
+  {
+    path: "/login",
+    component: LoginPage,
   },
   // { path: '*', component: Error404 }
 ];

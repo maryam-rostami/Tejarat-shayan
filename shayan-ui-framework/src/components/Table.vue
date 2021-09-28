@@ -1,44 +1,34 @@
 <template>
-  <div class="q-pa-md">
-    <q-table
-      :props="props"
-      :title="title"
-      :rows="rows"
-      :columns="columns"
-      :separator="separator"
-      row-key="id"
-      @row-click="selectRow"
-    >
-      <!-- actions cell  -->
-      <template v-slot:body-cell-actions="props">
-        <q-td :props="props">
-          <q-btn
-            dense
-            round
-            flat
-            color="primary"
-            @click="editRow(props)"
-            icon="edit"
-          ></q-btn>
-          <q-btn
-            dense
-            round
-            flat
-            color="red"
-            @click="deleteRow(props)"
-            icon="delete"
-          ></q-btn>
-        </q-td>
-      </template>
-    </q-table>
-  </div>
+  <q-table
+    :props="props"
+    :title="title"
+    :rows="rows"
+    :columns="columns"
+    :separator="separator"
+    row-key="id"
+    @row-click="selectRow"
+  >
+    <!-- actions cell  -->
+    <template v-slot:body-cell-actions="props" v-if="actions !== null">
+      <q-td :props="props">
+        <q-btn
+          class="q-mr-sm"
+          v-for="action in actions"
+          :key="action.name"
+          :label="action.label"
+          :color="action.color"
+          @click="action.event(props)"
+        ></q-btn>
+      </q-td>
+    </template>
+  </q-table>
 </template>
 <script>
 import { ref } from "vue";
 
 export default {
   name: "TTable",
-  props: ["columns", "rows", "title", "row-key"],
+  props: ["columns", "rows", "title", "row-key", "actions"],
   data() {
     return {};
   },
@@ -62,6 +52,9 @@ export default {
   methods: {
     selectRow(evt, row, index) {
       this.$emit("row-click", evt, row, index);
+    },
+    accessRow(props) {
+      this.$emit("access-click", props);
     },
     editRow(props) {
       this.$emit("edit-click", props);

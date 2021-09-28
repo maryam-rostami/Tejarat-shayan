@@ -28,9 +28,14 @@
       <!-- ====menu==== -->
       <div style="max-width: 350px">
         <q-list separator>
-          <q-item to="/table" clickable exact v-ripple>
+          <q-item to="/table" clickable exact-path v-ripple>
             <q-item-section>
               Table
+            </q-item-section>
+          </q-item>
+          <q-item to="/modal" clickable exact-path v-ripple>
+            <q-item-section>
+              Modal
             </q-item-section>
           </q-item>
         </q-list>

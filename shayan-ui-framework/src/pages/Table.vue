@@ -5,6 +5,8 @@
     title="لیست کاربران"
     @edit-click="editRow"
     @delete-click="deleteRow"
+    @access-click="accessRow"
+    :actions="actions"
   />
 </template>
 
@@ -12,7 +14,7 @@
 import tTable from "../components/Table.vue";
 
 export default {
-  name: "TablePage",
+  name: "Table",
   components: { tTable },
   data() {
     return {
@@ -41,6 +43,16 @@ export default {
           email: "pashmak@gmail.com",
         },
       ],
+      actions: [
+        {
+          name: "access",
+          label: "دسترسی",
+          color: "secondary",
+          event: this.accessRow,
+        },
+        { name: "edit", label: "ویرایش", color: "amber", event: this.editRow },
+        { name: "delete", label: "حذف", color: "red", event: this.deleteRow },
+      ],
     };
   },
   created() {
@@ -50,8 +62,11 @@ export default {
     selectedRow: (evt, row, index) => {
       console.log("selected row ::::", evt, row.id, index);
     },
+    accessRow(props) {
+      console.log("access row ::::", props.row);
+    },
     editRow(props) {
-      console.log("Edit row ::::", props.row.id);
+      console.log("Edit row ::::", props.row);
     },
     deleteRow(props) {
       console.log("Delete row ::::", props.row.id);

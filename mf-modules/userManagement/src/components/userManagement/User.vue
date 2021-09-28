@@ -74,6 +74,8 @@
       title="لیست کاربران"
       @edit-click="editRow"
       @delete-click="deleteRow"
+      @access-click="accessRow"
+      :actions="actions"
     />
     <!----------->
   </div>
@@ -87,7 +89,6 @@ export default {
   components: { tTable },
   data() {
     return {
-      visibleColumns: ["id"],
       columns: [
         {
           name: "id",
@@ -108,10 +109,20 @@ export default {
         },
         {
           id: "2",
-          lastName: "پشمک رستمی",
-          userName: "p.rostami",
-          email: "pashmak@gmail.com",
+          lastName: " سپیده رضایی",
+          userName: "s.rezaei",
+          email: "sepide.rezaei@gmail.com",
         },
+      ],
+      actions: [
+        {
+          name: "access",
+          label: "دسترسی",
+          color: "secondary",
+          event: this.accessRow,
+        },
+        { name: "edit", label: "ویرایش", color: "amber", event: this.editRow },
+        { name: "delete", label: "حذف", color: "red", event: this.deleteRow },
       ],
     };
   },
@@ -124,12 +135,21 @@ export default {
     this.$store.dispatch("fetchUserList");
     console.log("created called.");
   },
+
   methods: {
-    rowClick: (evt, row, index) => {
-      console.log("selected row ::::", evt, row, index);
+    selectedRow: (evt, row, index) => {
+      console.log("selected row ::::", evt, row.id, index);
+    },
+    accessRow(props) {
+      console.log("access row ::::", props.row);
+    },
+    editRow(props) {
+      console.log("Edit row ::::", props.row);
+    },
+    deleteRow(props) {
+      console.log("Delete row ::::", props.row.id);
     },
   },
-
   computed: {
     // Get From Store
     userList() {
